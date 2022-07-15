@@ -45,7 +45,7 @@ const Row = ({ title, movies }: Props) => {
           className="flex items-center gap-2 md:gap-2.5 md:p-2 overflow-x-scroll scrollbar-hide"
           ref={rowRef}
         >
-          {movies.map((movie) => {
+          {movies?.map((movie) => {
             return <Thumbnail key={movie.id} movie={movie} />;
           })}
         </div>
