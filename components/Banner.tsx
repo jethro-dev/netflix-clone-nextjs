@@ -34,7 +34,9 @@ const Banner = ({ netflixOriginals }: Props) => {
       </h1>
       <p className="max-w-xs text-xs text-shadow-xl md:max-w-lg md:text-lg lg:max-w-2xl lg:text-xl">
         {`${
-          movie?.overview && movie?.overview.length < 240
+          movie?.overview &&
+          movie?.overview.length &&
+          movie?.overview?.length < 240
             ? movie?.overview
             : movie?.overview.substring(0, 240) + "..."
         }`}
