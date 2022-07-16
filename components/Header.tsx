@@ -26,7 +26,7 @@ const Header = (props: Props) => {
     <header className={`${isScrolled && "bg-primary"} `}>
       <div className="flex items-center gap-2 md:gap-10">
         <img
-          src="https://rb.gy/ulxxee"
+          src="/images/icon.svg"
           alt="Netflix logo"
           width={100}
           height={100}
