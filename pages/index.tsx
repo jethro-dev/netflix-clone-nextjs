@@ -63,7 +63,7 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      netflixOriginals: data,
+      netflixOriginals: data.results,
     }, // will be passed to the page component as props
   };
 };
