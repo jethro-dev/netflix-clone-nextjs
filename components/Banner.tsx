@@ -14,9 +14,10 @@ const Banner = ({ netflixOriginals }: Props) => {
   const baseUrl = IMG_SRC_URL;
 
   useEffect(() => {
-    setMovie(
-      netflixOriginals[Math.floor(Math.random() * netflixOriginals.length)]
-    );
+    if (netflixOriginals) {
+      let index = Math.floor(Math.random() * netflixOriginals.length);
+      setMovie(netflixOriginals[index]);
+    }
   }, [netflixOriginals]);
 
   return (
