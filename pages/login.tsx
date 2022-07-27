@@ -1,15 +1,15 @@
+import { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-interface Props {}
 interface Inputs {
   email: string;
   password: string;
 }
 
-const login = (props: Props) => {
+const Login: NextPage = () => {
   const [login, setLogin] = useState(false);
 
   const {
