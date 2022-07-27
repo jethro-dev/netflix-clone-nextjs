@@ -61,25 +61,29 @@ const Login: NextPage = () => {
             <input
               type="email"
               placeholder="Email"
-              className="input"
+              className={`input ${
+                errors.email && "border-b-2 border-orange-500"
+              }`}
               {...register("email", { required: true })}
             />
             {errors.email && (
-              <p className="p-1 text-[13px] font-light text-orange-500">
-                Please enter email
+              <p className="p-1 text-[13px] font-light  text-orange-500">
+                Please enter a valid email.
               </p>
             )}
           </label>
           <label className="inline-block w-full">
             <input
               type="password"
-              placeholder="Password"
-              className="input"
               {...register("password", { required: true })}
+              placeholder="Password"
+              className={`input ${
+                errors.password && "border-b-2 border-orange-500"
+              }`}
             />
             {errors.password && (
-              <p className="p-1 text-[13px] font-light text-orange-500">
-                Please enter password
+              <p className="p-1 text-[13px] font-light  text-orange-500">
+                Your password must contain between 4 and 60 characters.
               </p>
             )}
           </label>
@@ -106,4 +110,4 @@ const Login: NextPage = () => {
   );
 };
 
-export default login;
+export default Login;
