@@ -25,3 +25,4 @@
 
 // export default app;
 // export { auth, db };
+export {};
