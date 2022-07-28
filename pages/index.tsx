@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { Header, Banner, Row } from "../components";
+import { Header, Banner, Row, Modal } from "../components";
 import requests from "../utils/request";
 import { Movie } from "../typings";
 import useAuth from "../hooks/useAuth";
+import { modalState } from "../atoms/modalAtmos";
+import { useRecoilValue } from "recoil";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -28,6 +30,7 @@ const Home: NextPage<Props> = ({
   documentaries,
 }) => {
   const { logout, loading } = useAuth();
+  const showModal = useRecoilValue(modalState);
 
   if (loading) return null;
 
@@ -53,7 +56,7 @@ const Home: NextPage<Props> = ({
           <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
-      {/* modal */}
+      {showModal && <Modal />}
     </div>
   );
 };
