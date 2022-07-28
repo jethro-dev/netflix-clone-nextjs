@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Header, Banner, Row } from "../components";
 import requests from "../utils/request";
 import { Movie } from "../typings";
+import useAuth from "../hooks/useAuth";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -26,6 +27,10 @@ const Home: NextPage<Props> = ({
   romanceMovies,
   documentaries,
 }) => {
+  const { logout, loading } = useAuth();
+
+  if (loading) return null;
+
   return (
     <div className="relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh]">
       <Head>

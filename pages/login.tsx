@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import useAuth from "../hooks/useAuth";
 
 interface Inputs {
   email: string;
@@ -11,7 +12,7 @@ interface Inputs {
 
 const Login: NextPage = () => {
   const [login, setLogin] = useState(false);
-
+  const { signIn, signUp } = useAuth();
   const {
     register,
     handleSubmit,
@@ -21,11 +22,9 @@ const Login: NextPage = () => {
 
   const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) => {
     if (login) {
-      //await signIn(email, password);
-      console.log({ login, email, password });
+      await signIn(email, password);
     } else {
-      //await signUp(email,password)
-      console.log({ login, email, password });
+      await signUp(email, password);
     }
   };
 
