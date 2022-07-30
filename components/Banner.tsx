@@ -48,12 +48,12 @@ const Banner = ({ netflixOriginals }: Props) => {
       </p>
 
       <div className="flex gap-2">
-        <button className="bannerBtn bg-white text-black">
+        <button className="banner-btn bg-white text-black">
           <FaPlay className="h-4 w-4 text-black md:h-7 md:w-7" />
           Play
         </button>
         <button
-          className="bannerBtn bg-neutral-500"
+          className="banner-btn bg-neutral-500"
           onClick={() => {
             setShowModal(true);
             setCurrentMovie(movie);
