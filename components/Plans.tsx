@@ -37,7 +37,7 @@ const Plans = (props: Props) => {
 
       <main className="max-w-5xl mx-auto px-5 lg:px-10 py-16 lg:py-20">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-6 md:mb-8 lg:mb-10">
-          Choose the plan that's right for you
+          Choose the plan that&apos;s right for you
         </h1>
         <ul>
           <li className="flex items-center gap-x-2">
