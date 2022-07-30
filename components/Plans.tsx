@@ -1,9 +1,14 @@
+import { CheckIcon } from "@heroicons/react/solid";
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
+import useAuth from "../hooks/useAuth";
 
 type Props = {};
 
 const Plans = (props: Props) => {
+  const { logout } = useAuth();
+
   return (
     <div>
       <Head>
@@ -12,15 +17,57 @@ const Plans = (props: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>
-        <img
-          src="/images/icon.svg"
-          alt="Netflix logo"
-          width={100}
-          height={100}
-          className="cursor-pointer object-contain"
-        />
+      <header className="sticky border-b border-white/10 bg-primary">
+        <Link href="/">
+          <img
+            src="/images/icon.svg"
+            alt="Netflix logo"
+            width={100}
+            height={100}
+            className="cursor-pointer object-contain"
+          />
+        </Link>
+        <button
+          className="text-sm md:text-base font-light hover:underline"
+          onClick={logout}
+        >
+          logout
+        </button>
       </header>
+
+      <main className="max-w-5xl mx-auto px-5 lg:px-10 py-16 lg:py-20">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-6 md:mb-8 lg:mb-10">
+          Choose the plan that's right for you
+        </h1>
+        <ul>
+          <li className="flex items-center gap-x-2">
+            <CheckIcon className="h-7 w-7 text-[#e50914]" />
+            <span className="text-sm lg:text-base font-light">
+              Watch all you want. Ad-free.
+            </span>
+          </li>
+          <li className="flex items-center gap-x-2">
+            <CheckIcon className="h-7 w-7 text-[#e50914]" />
+            <span className="text-sm lg:text-base font-light">
+              Recommendations just for you.
+            </span>
+          </li>
+          <li className="flex items-center gap-x-2">
+            <CheckIcon className="h-7 w-7 text-[#e50914]" />
+            <span className="text-sm lg:text-base font-light">
+              Charge or cancel your plan anytime.
+            </span>
+          </li>
+        </ul>
+
+        <div className="mt-10 flex flex-col space-y-4">
+          <div className=" flex items-center justify-end gap-4 md:gap-6 lg:gap-8">
+            <div className="plan-box">Basic</div>
+            <div className="plan-box">Standard</div>
+            <div className="plan-box">Premium</div>
+          </div>
+        </div>
+      </main>
     </div>
   );
 };
