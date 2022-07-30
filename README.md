@@ -8,8 +8,8 @@
 
 Language: [TypeScript](https://www.typescriptlang.org/) <br />
 Framework: [Next.js](https://nextjs.org/) - The [React](https://reactjs.org/) framework for production. <br />
-Style with: [TailwindCSS] <br />
-Deployment: [Vercel]
+Style with: [TailwindCSS](https://tailwindcss.com/) <br />
+Deployment: [Vercel](https://vercel.com/)
 
 ## Screenshots 📷
 
